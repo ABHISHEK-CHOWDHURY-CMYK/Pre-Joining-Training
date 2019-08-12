@@ -1,0 +1,32 @@
+<% obj.each do |medicine| %>
+		<div class="row">
+			<div class="col-xs-8 col-xs-offset-2">
+				<div class="well well-lg">
+					<div class="medicine-title">
+						<h5><strong>TITLE:</strong></h5> <%= link_to medicine.title, medicine_path(medicine) %>
+					</div>
+					<div class="medicine-body">
+						<h5><strong>DESCRIPTION:</strong> </h5><%= truncate(medicine.description, length: 50) %>
+					</div>
+					<div class="medicine-company">
+						<h5><strong>COMPANY:</strong></h5><%= medicine.company %>
+					</div>
+					<div class="medicine-batch_number">
+						<h5><strong>BATCH NUMBER:</strong></h5><%= medicine.batch_number %>
+					</div>
+					<div class="medicine-manufacturing_date">
+						<h5><strong>MANUFACTURING DATE:</strong></h5><%= medicine.manufacturing_date %>
+					</div>
+					<div class="medicine-expiry_date">
+						<h5><strong>EXPIRY DATE:</strong></h5><%= medicine.expiry_date %>
+					</div>
+
+					<div class="medicine-actions">
+						<%= link_to "Edit this medicine details", edit_medicine_path(medicine), class: "btn btn-xs btn-primary" %> 
+						<%= link_to "Remove this medicine", medicine_path(medicine), method: :delete,
+						 data: {confirm: "Are you sure you want to delete this medicine?"}, class: "btn btn-xs btn-danger" %>
+					</div>
+				</div>
+			</div>
+		</div>
+	<% end %>

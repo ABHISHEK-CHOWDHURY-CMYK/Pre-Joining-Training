@@ -1,0 +1,8 @@
+<h1 align="center" style="color:white"> Listing all medicines </h1>
+	<body style=" background-image: url('/assets/pharmacy.jpg'); background-size: cover;">
+<p>
+	<%=  link_to "Add new medicine", new_medicine_path %> ||
+	<%= link_to 'Home', root_path %>
+</p>
+
+	<%= render 'medicine', obj: @medicines %>

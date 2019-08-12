@@ -1,0 +1,11 @@
+<h3>Search Result</h3>  
+<body style=" background-image: url('/assets/show.jpg'); background-size: cover;">
+
+    <% @results.each do |result| %>  
+        <h4><strong>Title:</strong></h4><%= result.title %><br>
+        <h4><strong>Description:</strong></h4><%= result.description %><br>
+        <h4><strong>Company:</strong></h4><%= result.company %><br>
+        <h4><strong>Batch Number:</strong></h4><%= result.batch_number %><br>
+        <h4><strong>Manufacturing Date:</strong></h4><%= result.manufacturing_date %><br>
+        <h4><strong>Expiry Date:</strong></h4><%= result.expiry_date %><br>
+    <% end %>
